@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <title>Youtube Access</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand mx-auto" href="#">
+      <img src="youtube.png" width="120" height="30" class="d-inline-block align-top align-center" alt=""">
+        </a>
+      </nav>
+              <div class="
+        alert alert-warning" role="alert" style='padding:20px 30px;'>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      The quality of the videos are typically 360p. The Youtube converter API that I use downloads the videos at 360p
+      so I don't have a choice. Also some videos (particularly verticle videos) are downloaded as a .webm rather than
+      .mp4. I also can't control that but I will try to fix it as soon as I can. If you really want to download
+      verticle videos as mp4 then search for 'webm to mp4'.
+      <hr>
+      Created by qwerty12
+      </div>
+      <div class="input-group col-sm-5 my-5 mx-auto">
+        <input type="text" class="form-control" id="input-box" placeholder="Search for Something...">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+        </div>
+      </div>
+      <br>
+      <div id="main-container">
+        <div id='loading' style="display:none;">
+          <img src='https://www.sapstore.com/_ui/desktop/theme-sap-sapphire/images/spinner.gif' style='display:block;margin:10px auto;'
+            width='100px'>
+          <h3 style="text-align:center">Searching...</h3>
+        </div>
+        <div class="card mx-auto" style="width: 60rem;display: none;" id="template">
+          <div class="card-body">
+            <img class="card-img thumbnail" src="#" alt="Card image" style="width:320px;float:left; margin-right:20px;">
+            <h5 class="card-title video-title">This is a Videeeeeo! </h5>
+            <h6 class="card-subtitle mb-2 text-muted channel-name">HelloWorld!</h6>
+            <p class="card-text video-description">Some examples of descriptive text include: The sunset filled the
+              entire sky with the deep color of rubies, setting the clouds ablaze. The waves crashed and danced along
+              the shore, moving up and down in a graceful and gentle rhythm like they were dancing.</p>
+            <h6 class="card-subtitle mb-2 text-muted video-id">ID: AvgCkHrcj90</h6>
+            <h6 class="card-subtitle mb-2 text-muted published-at">Published On 13/7/2018</h6>
+            <iframe src="https://break.tv/widget/mp4/?link=https://www.youtube.com/watch?v=i62Zjga8JOM&border=F0F0F0&title=0&colormp4=007BFF"
+              width="300" height="120" scrolling="no" style="border:none;"></iframe>
+          </div>
+        </div>
+      </div>
+      <script src="script.js"></script>
+</body>
+
+</html>
