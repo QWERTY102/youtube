@@ -1,6 +1,6 @@
 var input = document.getElementById('input-box');
 var search = document.getElementById('button-addon2');
-var searchURL = 'http://localhost:4000/search';
+var searchURL = 'youtubeaccess-vvmmqloszf.now.sh/search';
 var youtubep1 = 'https://break.tv/widget/mp4/?link=https://www.youtube.com/watch?v=';
 var youtubep2 = '&border=F0F0F0&title=0&colormp4=007BFF';
 var close = document.querySelector('.close');
