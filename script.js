@@ -1,8 +1,7 @@
 var input = document.getElementById('input-box');
 var search = document.getElementById('button-addon2');
-var searchURL = 'https://youtubeaccess-vvmmqloszf.now.sh/search';
-var youtubep1 = 'https://break.tv/widget/mp4/?link=https://www.youtube.com/watch?v=';
-var youtubep2 = '&border=F0F0F0&title=0&colormp4=007BFF';
+var searchURL = 'https://youtubeaccess-jcyfudmwvl.now.sh/search';
+var redirect = 'https://youtubeaccess-jcyfudmwvl.now.sh/download?id=';
 var close = document.querySelector('.close');
 
 close.addEventListener('click', () => {
@@ -55,7 +54,6 @@ function process(json) {
 		cardClone.childNodes[1].getElementsByClassName('video-description')[0].innerText = data.description;
 		cardClone.childNodes[1].getElementsByClassName('video-id')[0].innerText = 'ID: ' + data.videoId;
 		cardClone.childNodes[1].getElementsByClassName('published-at')[0].innerText = 'Published At ' + data.publishedAt;
-		cardClone.childNodes[1].querySelector('iframe').src = youtubep1 + data.videoId + youtubep2;
 		cardClone.removeAttribute('id');
 		cardClone.className = 'card mx-auto videos';
 		cardClone.style.display = 'block';
@@ -63,4 +61,10 @@ function process(json) {
 		document.getElementById('main-container').appendChild(cardClone);
 	});
 	//console.log(cardClone);	
+}
+
+function sendToDownload(element) {
+	var videoId = element.parentNode.querySelector('.video-id').innerText.slice(4);
+	console.log(videoId);
+	window.open(redirect+videoId);
 }
