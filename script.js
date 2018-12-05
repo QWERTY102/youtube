@@ -1,8 +1,9 @@
 var input = document.getElementById('input-box');
 var search = document.getElementById('button-addon2');
-var searchURL = 'https://youtubeaccess-qmrrbznnbl.now.sh/search';
-var redirect = 'https://youtubeaccess-qmrrbznnbl.now.sh/download?id=';
-var thumbnail = 'https://youtubeaccess-qmrrbznnbl.now.sh/thumbnail?id=';
+var searchURL = 'https://youtubeaccess-otpmdjtbuh.now.sh/search';
+var redirect = 'https://youtubeaccess-otpmdjtbuh.now.sh/download?id=';
+var redirectmp3 = 'https://youtubeaccess-otpmdjtbuh.now.sh/downloadmp3?id=';
+var thumbnail = 'https://youtubeaccess-otpmdjtbuh.now.sh/thumbnail?id=';
 var close = document.querySelector('.close');
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -81,7 +82,7 @@ function process(json) {
 	
 }
 
-function sendToDownload(element) {
+function sendToDownload(element,format) {
 	var videoId = element.parentNode.querySelector('.video-id').innerText.slice(4);
-	window.open(redirect+videoId);
+	format == 'mp4' ? window.open(redirect+videoId) : window.open(redirectmp3+videoId);
 }
