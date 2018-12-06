@@ -1,9 +1,9 @@
 var input = document.getElementById('input-box');
 var search = document.getElementById('button-addon2');
-var searchURL = 'https://youtubeaccess-otpmdjtbuh.now.sh/search';
-var redirect = 'https://youtubeaccess-otpmdjtbuh.now.sh/download?id=';
-var redirectmp3 = 'https://youtubeaccess-otpmdjtbuh.now.sh/downloadmp3?id=';
-var thumbnail = 'https://youtubeaccess-otpmdjtbuh.now.sh/thumbnail?id=';
+var searchURL = 'https://youtubeaccess-xcjreubccu.now.sh/search';
+var redirect = 'https://youtubeaccess-xcjreubccu.now.sh/download?id=';
+var redirectmp3 = 'https://youtubeaccess-xcjreubccu.now.sh/downloadmp3?id=';
+var thumbnail = 'https://youtubeaccess-xcjreubccu.now.sh/thumbnail?id=';
 var close = document.querySelector('.close');
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
