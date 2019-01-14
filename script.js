@@ -1,11 +1,20 @@
 var input = document.getElementById('input-box');
 var search = document.getElementById('button-addon2');
-var searchURL = 'https://youtubeaccess-xreszfknxn.now.sh/search';
-var redirect = 'https://youtubeaccess-xreszfknxn.now.sh/download?id=';
-var redirectmp3 = 'https://youtubeaccess-xreszfknxn.now.sh/downloadmp3?id=';
-var thumbnail = 'https://youtubeaccess-xreszfknxn.now.sh/thumbnail?id=';
+var searchURL = 'https://youtubeaccess-cmjxqfqrvh.now.sh/search';
+var redirect = 'https://youtubeaccess-cmjxqfqrvh.now.sh/download?id=';
+var redirectmp3 = 'https://youtubeaccess-cmjxqfqrvh.now.sh/downloadmp3?id=';
+var thumbnail = 'https://youtubeaccess-cmjxqfqrvh.now.sh/thumbnail?id=';
+var redirectWatch = 'https://youtubeaccess-cmjxqfqrvh.now.sh/watch?id=';
 var close = document.querySelector('.close');
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var Exit = document.getElementsByClassName('exit')[0];
+var video = document.getElementsByTagName('video')[0];
+
+
+Exit.addEventListener('click', () => {
+	Exit.parentNode.style.display = 'none';
+	video.pause();
+});
 
 close.addEventListener('click', () => {
 	close.parentNode.style.display = 'none';
@@ -47,6 +56,7 @@ function sendSearch(data) {
 
 function process(json) {
 	document.querySelector('#loading').style.display = 'none';
+	console.log(json[0].pages);
 	json.forEach((data) => {
 		var cardClone = document.getElementById('template').cloneNode(true);
 		cardClone.childNodes[1].getElementsByClassName('thumbnail')[0].src = thumbnail+data.videoId;
@@ -84,5 +94,14 @@ function process(json) {
 
 function sendToDownload(element,format) {
 	var videoId = element.parentNode.querySelector('.video-id').innerText.slice(4);
-	format == 'mp4' ? window.open(redirect+videoId) : window.open(redirectmp3+videoId);
+	if  (format == 'mp4') {
+		window.open(redirect+videoId);
+	} else if  (format == 'mp3') {
+		window.open(redirectmp3+videoId);
+	} else if  (format == 'watch') {
+		Exit.parentNode.style.display = 'block';
+		video.childNodes[1].src = redirectWatch + videoId;
+		video.poster = thumbnail + videoId;
+		video.load();
+	}
 }
